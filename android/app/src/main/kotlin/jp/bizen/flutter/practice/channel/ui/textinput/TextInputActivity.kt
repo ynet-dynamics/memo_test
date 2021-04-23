@@ -1,6 +1,6 @@
 package jp.bizen.flutter.practice.channel.ui.textinput
 
-import android.content.Context
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
@@ -11,8 +11,8 @@ import jp.bizen.flutter.practice.channel.platform.PlatformText
 
 class TextInputActivity : AppCompatActivity() {
     companion object {
-        fun createIntent(context: Context) {
-            context.startActivity(Intent(context, TextInputActivity::class.java))
+        fun createIntent(rootScreen: Activity) {
+            rootScreen.startActivity(Intent(rootScreen, TextInputActivity::class.java))
         }
     }
 

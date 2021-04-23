@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		5260BAD82632B33B00A93FAD /* PlatformText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BAD72632B33B00A93FAD /* PlatformText.swift */; };
+		5260BADB2632B3FF00A93FAD /* BasicExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BADA2632B3FF00A93FAD /* BasicExt.swift */; };
+		5260BADD2632B45700A93FAD /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BADC2632B45700A93FAD /* ViewExt.swift */; };
+		5260BAE22632B8F300A93FAD /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BAE12632B8F300A93FAD /* TextInputViewController.swift */; };
+		5260BAE42632BAEA00A93FAD /* TextInputViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5260BAE32632BAEA00A93FAD /* TextInputViewController.storyboard */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
@@ -32,6 +37,11 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		5260BAD72632B33B00A93FAD /* PlatformText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformText.swift; sourceTree = "<group>"; };
+		5260BADA2632B3FF00A93FAD /* BasicExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExt.swift; sourceTree = "<group>"; };
+		5260BADC2632B45700A93FAD /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		5260BAE12632B8F300A93FAD /* TextInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
+		5260BAE32632BAEA00A93FAD /* TextInputViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextInputViewController.storyboard; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
@@ -55,6 +65,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5260BAD62632B32E00A93FAD /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				5260BAD72632B33B00A93FAD /* PlatformText.swift */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		5260BAD92632B3EF00A93FAD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5260BADA2632B3FF00A93FAD /* BasicExt.swift */,
+				5260BADC2632B45700A93FAD /* ViewExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5260BADE2632B8CB00A93FAD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5260BADF2632B8D200A93FAD /* TextInput */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5260BADF2632B8D200A93FAD /* TextInput */ = {
+			isa = PBXGroup;
+			children = (
+				5260BAE12632B8F300A93FAD /* TextInputViewController.swift */,
+				5260BAE32632BAEA00A93FAD /* TextInputViewController.storyboard */,
+			);
+			path = TextInput;
+			sourceTree = "<group>";
+		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +130,9 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				5260BADE2632B8CB00A93FAD /* Classes */,
+				5260BAD92632B3EF00A93FAD /* Extensions */,
+				5260BAD62632B32E00A93FAD /* Platform */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -161,6 +208,7 @@
 			files = (
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
+				5260BAE42632BAEA00A93FAD /* TextInputViewController.storyboard in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 			);
@@ -204,7 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5260BAD82632B33B00A93FAD /* PlatformText.swift in Sources */,
+				5260BADB2632B3FF00A93FAD /* BasicExt.swift in Sources */,
+				5260BADD2632B45700A93FAD /* ViewExt.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				5260BAE22632B8F300A93FAD /* TextInputViewController.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +342,10 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.pageTransaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -399,7 +454,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -414,7 +470,10 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.pageTransaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -433,7 +492,10 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.pageTransaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";

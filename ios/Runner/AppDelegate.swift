@@ -3,11 +3,25 @@ import Flutter
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-  ) -> Bool {
-    GeneratedPluginRegistrant.register(with: self)
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
+    
+    private var flutterViewController: FlutterViewController {
+        // swiftlint:disable force_cast
+        return self.window.rootViewController as! FlutterViewController
+    }
+    
+    override func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        GeneratedPluginRegistrant.register(with: self)
+        setupMethodChannels()
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+}
+
+private extension AppDelegate {
+    private func setupMethodChannels() {
+        let messenger = flutterViewController.binaryMessenger
+        PlatformText.setup(messenger)
+    }
 }

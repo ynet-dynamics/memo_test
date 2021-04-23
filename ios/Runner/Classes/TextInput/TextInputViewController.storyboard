@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gMr-hT-rc3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Text Input View Controller-->
+        <scene sceneID="F0p-KY-O50">
+            <objects>
+                <viewController storyboardIdentifier="TextInputViewController" id="gMr-hT-rc3" customClass="TextInputViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="maT-lY-eEs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIs-Pc-SEe">
+                                <rect key="frame" x="20" y="64" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eui-rb-4DW">
+                                <rect key="frame" x="191.5" y="114" width="31" height="30"/>
+                                <state key="normal" title="返す"/>
+                                <connections>
+                                    <action selector="onBtnBackTap:" destination="gMr-hT-rc3" eventType="touchUpInside" id="eev-Gl-5At"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wkW-ym-bGA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZIs-Pc-SEe" firstAttribute="leading" secondItem="wkW-ym-bGA" secondAttribute="leading" constant="20" id="Cli-Ae-8xE"/>
+                            <constraint firstItem="eui-rb-4DW" firstAttribute="centerX" secondItem="maT-lY-eEs" secondAttribute="centerX" id="Z8n-2k-9gl"/>
+                            <constraint firstItem="eui-rb-4DW" firstAttribute="top" secondItem="ZIs-Pc-SEe" secondAttribute="bottom" constant="16" id="aZE-vW-I0h"/>
+                            <constraint firstItem="wkW-ym-bGA" firstAttribute="trailing" secondItem="ZIs-Pc-SEe" secondAttribute="trailing" constant="20" id="qmb-g2-3Vq"/>
+                            <constraint firstItem="ZIs-Pc-SEe" firstAttribute="top" secondItem="wkW-ym-bGA" secondAttribute="top" constant="20" id="rqW-a0-BGa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="editText" destination="ZIs-Pc-SEe" id="c8p-pD-61M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eiS-rd-eUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
