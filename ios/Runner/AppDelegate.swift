@@ -22,6 +22,6 @@ import Flutter
 private extension AppDelegate {
     private func setupMethodChannels() {
         let messenger = flutterViewController.binaryMessenger
-        PlatformText.setup(messenger)
+        PlatformText.setup(rootScreen: flutterViewController, messenger)
     }
 }
