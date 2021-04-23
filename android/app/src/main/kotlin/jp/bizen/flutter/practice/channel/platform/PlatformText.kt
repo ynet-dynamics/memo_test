@@ -1,6 +1,6 @@
 package jp.bizen.flutter.practice.channel.platform
 
-import android.app.Activity
+import io.flutter.embedding.android.FlutterActivity
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -13,7 +13,7 @@ class PlatformText private constructor(private val channel: MethodChannel) {
         private const val METHOD_LAUNCH_TEXT_SCREEN = "LaunchTextScreen"
         private const val METHOD_SEND_TEXT = "SendText"
 
-        fun setup(rootScreen: Activity, messenger: BinaryMessenger) {
+        fun setup(rootScreen: FlutterActivity, messenger: BinaryMessenger) {
             val textChannel = MethodChannel(messenger, TEXT_CHANNEL)
             instance = PlatformText(textChannel)
             textChannel.setMethodCallHandler { call, result ->
@@ -22,7 +22,7 @@ class PlatformText private constructor(private val channel: MethodChannel) {
         }
     }
 
-    private fun handler(rootScreen: Activity, call: MethodCall, result: MethodChannel.Result) {
+    private fun handler(rootScreen: FlutterActivity, call: MethodCall, result: MethodChannel.Result) {
         when (call.method) {
             METHOD_LAUNCH_TEXT_SCREEN -> {
                 TextInputActivity.createIntent(rootScreen)

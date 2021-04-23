@@ -13,7 +13,7 @@ class PlatformText {
         self.channel = channel
     }
     
-    static func setup(rootScreen: UIViewController, _ messenger: FlutterBinaryMessenger){
+    static func setup(rootScreen: FlutterViewController, _ messenger: FlutterBinaryMessenger){
         let channel = FlutterMethodChannel(name: TEXT_CHANNEL, binaryMessenger: messenger)
         instance = PlatformText(channel)
         channel.setMethodCallHandler { methodCall, result in
@@ -21,7 +21,7 @@ class PlatformText {
         }
     }
     
-    private func handler(rootScreen: UIViewController, call: FlutterMethodCall, result: @escaping FlutterResult) {
+    private func handler(rootScreen: FlutterViewController, call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
         case PlatformText.METHOD_LAUNCH_TEXT_SCREEN:
             rootScreen.present(TextInputViewController.instanceFromStoryboard(),
