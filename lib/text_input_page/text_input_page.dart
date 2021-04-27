@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_channel_practice/text_input_page/text_input_page_controller_provider.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:page_transaction/text_page/text_page_controller_provider.dart';
 
-class TextPage extends StatelessWidget {
+class TextInputPage extends StatelessWidget {
   Widget _buildLaunchTextInputScreenWidget() {
     return HookBuilder(builder: (context) {
-      final controller = useProvider(textPageControllerProvider.notifier);
+      final controller = useProvider(textInputPageControllerProvider.notifier);
       return TextButton(
           onPressed: () {
             controller.onTapLaunchTextScreen();
@@ -17,8 +17,8 @@ class TextPage extends StatelessWidget {
 
   Widget _buildTextWidget() {
     return HookBuilder(builder: (context) {
-      final monitoringText =
-          useProvider(textPageControllerProvider.select((value) => value.text));
+      final monitoringText = useProvider(
+          textInputPageControllerProvider.select((value) => value.text));
       return Text(monitoringText);
     });
   }

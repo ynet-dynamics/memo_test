@@ -6,16 +6,16 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import jp.bizen.flutter.practice.channel.ui.textinput.TextInputActivity
 
-class PlatformText private constructor(private val channel: MethodChannel) {
+class PlatformTextInput private constructor(private val channel: MethodChannel) {
     companion object {
-        lateinit var instance: PlatformText
+        lateinit var instance: PlatformTextInput
         private const val TEXT_CHANNEL = "channel/text"
         private const val METHOD_LAUNCH_TEXT_SCREEN = "LaunchTextScreen"
         private const val METHOD_SEND_TEXT = "SendText"
 
         fun setup(rootScreen: FlutterActivity, messenger: BinaryMessenger) {
             val textChannel = MethodChannel(messenger, TEXT_CHANNEL)
-            instance = PlatformText(textChannel)
+            instance = PlatformTextInput(textChannel)
             textChannel.setMethodCallHandler { call, result ->
                 instance.handler(rootScreen, call, result)
             }

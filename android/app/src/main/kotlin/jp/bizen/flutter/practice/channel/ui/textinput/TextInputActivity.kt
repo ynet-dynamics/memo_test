@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import jp.bizen.flutter.practice.channel.R
-import jp.bizen.flutter.practice.channel.platform.PlatformText
+import jp.bizen.flutter.practice.channel.platform.PlatformTextInput
 
 class TextInputActivity : AppCompatActivity() {
     companion object {
@@ -22,7 +22,7 @@ class TextInputActivity : AppCompatActivity() {
         val editText = findViewById<EditText>(R.id.edit)
         findViewById<TextView>(R.id.btn_back).setOnClickListener {
             val text = editText.text.toString()
-            PlatformText.instance.sendText(text)
+            PlatformTextInput.instance.sendText(text)
             finish()
         }
     }

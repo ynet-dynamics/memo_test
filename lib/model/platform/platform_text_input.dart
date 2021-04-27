@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 
-class PlatformText {
-  static const _channel = MethodChannel('channel/text');
+class PlatformTextInput {
+  static const _channel = MethodChannel('channel/textInput');
 
   static Future<void> launchTextScreen() async {
     return _channel.invokeMethod(TextMethod.LaunchTextScreen.method);

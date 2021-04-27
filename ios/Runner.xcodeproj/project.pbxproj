@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
-		5260BAD82632B33B00A93FAD /* PlatformText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BAD72632B33B00A93FAD /* PlatformText.swift */; };
+		5260BAD82632B33B00A93FAD /* PlatformTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BAD72632B33B00A93FAD /* PlatformTextInput.swift */; };
 		5260BADB2632B3FF00A93FAD /* BasicExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BADA2632B3FF00A93FAD /* BasicExt.swift */; };
 		5260BADD2632B45700A93FAD /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BADC2632B45700A93FAD /* ViewExt.swift */; };
 		5260BAE22632B8F300A93FAD /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BAE12632B8F300A93FAD /* TextInputViewController.swift */; };
@@ -37,7 +37,7 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
-		5260BAD72632B33B00A93FAD /* PlatformText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformText.swift; sourceTree = "<group>"; };
+		5260BAD72632B33B00A93FAD /* PlatformTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformTextInput.swift; sourceTree = "<group>"; };
 		5260BADA2632B3FF00A93FAD /* BasicExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExt.swift; sourceTree = "<group>"; };
 		5260BADC2632B45700A93FAD /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		5260BAE12632B8F300A93FAD /* TextInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		5260BAD62632B32E00A93FAD /* Platform */ = {
 			isa = PBXGroup;
 			children = (
-				5260BAD72632B33B00A93FAD /* PlatformText.swift */,
+				5260BAD72632B33B00A93FAD /* PlatformTextInput.swift */,
 			);
 			path = Platform;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5260BAD82632B33B00A93FAD /* PlatformText.swift in Sources */,
+				5260BAD82632B33B00A93FAD /* PlatformTextInput.swift in Sources */,
 				5260BADB2632B3FF00A93FAD /* BasicExt.swift in Sources */,
 				5260BADD2632B45700A93FAD /* ViewExt.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,

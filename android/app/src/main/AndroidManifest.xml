@@ -3,8 +3,7 @@
 
     <application
         android:allowBackup="false"
-        android:label="page_transaction"
-        android:theme="@style/Theme.MaterialComponents">
+        android:theme="@style/Theme.MaterialComponents.Light">
         <activity
             android:name=".ui.main.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

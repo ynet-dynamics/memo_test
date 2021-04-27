@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_channel_practice/text_input_page/text_input_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:page_transaction/text_page/text_page.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: TextPage(),
+      home: TextInputPage(),
     );
   }
 }

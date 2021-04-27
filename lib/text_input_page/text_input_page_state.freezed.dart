@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'text_page_state.dart';
+part of 'text_input_page_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,44 +13,44 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$TextPageStateTearOff {
-  const _$TextPageStateTearOff();
+class _$TextInputPageStateTearOff {
+  const _$TextInputPageStateTearOff();
 
-  _TextPageState call({required String text}) {
-    return _TextPageState(
+  _TextInputPageState call({required String text}) {
+    return _TextInputPageState(
       text: text,
     );
   }
 }
 
 /// @nodoc
-const $TextPageState = _$TextPageStateTearOff();
+const $TextInputPageState = _$TextInputPageStateTearOff();
 
 /// @nodoc
-mixin _$TextPageState {
+mixin _$TextInputPageState {
   String get text => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TextPageStateCopyWith<TextPageState> get copyWith =>
+  $TextInputPageStateCopyWith<TextInputPageState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TextPageStateCopyWith<$Res> {
-  factory $TextPageStateCopyWith(
-          TextPageState value, $Res Function(TextPageState) then) =
-      _$TextPageStateCopyWithImpl<$Res>;
+abstract class $TextInputPageStateCopyWith<$Res> {
+  factory $TextInputPageStateCopyWith(
+          TextInputPageState value, $Res Function(TextInputPageState) then) =
+      _$TextInputPageStateCopyWithImpl<$Res>;
   $Res call({String text});
 }
 
 /// @nodoc
-class _$TextPageStateCopyWithImpl<$Res>
-    implements $TextPageStateCopyWith<$Res> {
-  _$TextPageStateCopyWithImpl(this._value, this._then);
+class _$TextInputPageStateCopyWithImpl<$Res>
+    implements $TextInputPageStateCopyWith<$Res> {
+  _$TextInputPageStateCopyWithImpl(this._value, this._then);
 
-  final TextPageState _value;
+  final TextInputPageState _value;
   // ignore: unused_field
-  final $Res Function(TextPageState) _then;
+  final $Res Function(TextInputPageState) _then;
 
   @override
   $Res call({
@@ -66,31 +66,31 @@ class _$TextPageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TextPageStateCopyWith<$Res>
-    implements $TextPageStateCopyWith<$Res> {
-  factory _$TextPageStateCopyWith(
-          _TextPageState value, $Res Function(_TextPageState) then) =
-      __$TextPageStateCopyWithImpl<$Res>;
+abstract class _$TextInputPageStateCopyWith<$Res>
+    implements $TextInputPageStateCopyWith<$Res> {
+  factory _$TextInputPageStateCopyWith(
+          _TextInputPageState value, $Res Function(_TextInputPageState) then) =
+      __$TextInputPageStateCopyWithImpl<$Res>;
   @override
   $Res call({String text});
 }
 
 /// @nodoc
-class __$TextPageStateCopyWithImpl<$Res>
-    extends _$TextPageStateCopyWithImpl<$Res>
-    implements _$TextPageStateCopyWith<$Res> {
-  __$TextPageStateCopyWithImpl(
-      _TextPageState _value, $Res Function(_TextPageState) _then)
-      : super(_value, (v) => _then(v as _TextPageState));
+class __$TextInputPageStateCopyWithImpl<$Res>
+    extends _$TextInputPageStateCopyWithImpl<$Res>
+    implements _$TextInputPageStateCopyWith<$Res> {
+  __$TextInputPageStateCopyWithImpl(
+      _TextInputPageState _value, $Res Function(_TextInputPageState) _then)
+      : super(_value, (v) => _then(v as _TextInputPageState));
 
   @override
-  _TextPageState get _value => super._value as _TextPageState;
+  _TextInputPageState get _value => super._value as _TextInputPageState;
 
   @override
   $Res call({
     Object? text = freezed,
   }) {
-    return _then(_TextPageState(
+    return _then(_TextInputPageState(
       text: text == freezed
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -100,21 +100,21 @@ class __$TextPageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_TextPageState implements _TextPageState {
-  const _$_TextPageState({required this.text});
+class _$_TextInputPageState implements _TextInputPageState {
+  const _$_TextInputPageState({required this.text});
 
   @override
   final String text;
 
   @override
   String toString() {
-    return 'TextPageState(text: $text)';
+    return 'TextInputPageState(text: $text)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TextPageState &&
+        (other is _TextInputPageState &&
             (identical(other.text, text) ||
                 const DeepCollectionEquality().equals(other.text, text)));
   }
@@ -125,17 +125,18 @@ class _$_TextPageState implements _TextPageState {
 
   @JsonKey(ignore: true)
   @override
-  _$TextPageStateCopyWith<_TextPageState> get copyWith =>
-      __$TextPageStateCopyWithImpl<_TextPageState>(this, _$identity);
+  _$TextInputPageStateCopyWith<_TextInputPageState> get copyWith =>
+      __$TextInputPageStateCopyWithImpl<_TextInputPageState>(this, _$identity);
 }
 
-abstract class _TextPageState implements TextPageState {
-  const factory _TextPageState({required String text}) = _$_TextPageState;
+abstract class _TextInputPageState implements TextInputPageState {
+  const factory _TextInputPageState({required String text}) =
+      _$_TextInputPageState;
 
   @override
   String get text => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TextPageStateCopyWith<_TextPageState> get copyWith =>
+  _$TextInputPageStateCopyWith<_TextInputPageState> get copyWith =>
       throw _privateConstructorUsedError;
 }
