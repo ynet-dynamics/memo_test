@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'paint_history.dart';
+import 'package:flutter_channel_practice/module/src/paint_history.dart';
+import 'package:flutter_channel_practice/module/src/painter_ctrl.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 
@@ -45,7 +46,7 @@ class _PainterState extends State<Painter> {
 
           // ペイント部分
           painter: _CustomPainter(
-            widget.paintController._paintHistory,
+            widget.paintController.paintHistory,
             repaint: widget.paintController,
           ),
         ),
@@ -66,8 +67,8 @@ class _PainterState extends State<Painter> {
    */
   void _onPaintStart(DragStartDetails start) {
 
-    widget.paintController._paintHistory.addPaint(_getGlobalToLocalPosition(start.globalPosition));
-    widget.paintController._notifyListeners();
+    widget.paintController.paintHistory.addPaint(_getGlobalToLocalPosition(start.globalPosition));
+    widget.paintController.notifyListeners1();
   }
 
   /*
@@ -75,8 +76,8 @@ class _PainterState extends State<Painter> {
    */
   void _onPaintUpdate(DragUpdateDetails update) {
 
-    widget.paintController._paintHistory.updatePaint(_getGlobalToLocalPosition(update.globalPosition));
-    widget.paintController._notifyListeners();
+    widget.paintController.paintHistory.updatePaint(_getGlobalToLocalPosition(update.globalPosition));
+    widget.paintController.notifyListeners1();
   }
 
   /*
@@ -84,8 +85,8 @@ class _PainterState extends State<Painter> {
    */
   void _onPaintEnd(DragEndDetails end) {
 
-    widget.paintController._paintHistory.endPaint();
-    widget.paintController._notifyListeners();
+    widget.paintController.paintHistory.endPaint();
+    widget.paintController.notifyListeners1();
   }
 
   /*
@@ -120,89 +121,3 @@ class _CustomPainter extends CustomPainter {
   bool shouldRepaint(_CustomPainter oldDelegate) => true;
 }
 
-
-
-
-/*
- * ペイントコントローラ
- */
-class PaintController extends ChangeNotifier {
-
-  // ペイント履歴
-  final PaintHistory _paintHistory = PaintHistory();
-  // 線の色
-  late Color _drawColor = const Color.fromARGB(255, 0, 0, 0);
-  // 線幅
-  late double _thickness = 5.0;
-  // 背景色
-  final Color _backgroundColor = const Color.fromARGB(255, 255, 255, 255);
-
-  /*
-   * コンストラクタ
-   */
-  PaintController() : super() {
-
-    // ペイント設定
-    Paint paint = Paint();
-    paint.color = _drawColor;
-    paint.style = PaintingStyle.stroke;
-    paint.strokeWidth = _thickness;
-    _paintHistory.currentPaint = paint;
-    _paintHistory.backgroundColor = _backgroundColor;
-  }
-
-  void changePenSize() {
-
-
-    _thickness = 10.0;
-
-
-    print(_thickness);
-
-  }
-
-  /*
-   * undo実行
-   */
-  void undo() {
-
-    _paintHistory.undo();
-    notifyListeners();
-  }
-
-  /*
-   * redo実行
-   */
-  void redo() {
-
-    _paintHistory.redo();
-    notifyListeners();
-  }
-
-  /*
-   * undo可能か
-   */
-  bool get canUndo => _paintHistory.canUndo();
-
-  /*
-   * redo可能か
-   */
-  bool get canRedo => _paintHistory.canRedo();
-
-  /*
-   * リスナー実行
-   */
-  void _notifyListeners() {
-
-    notifyListeners();
-  }
-
-  /*
-   * クリア
-   */
-  void clear() {
-
-    _paintHistory.clear();
-    notifyListeners();
-  }
-}

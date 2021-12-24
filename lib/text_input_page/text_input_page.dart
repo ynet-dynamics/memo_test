@@ -6,10 +6,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class TextInputPage extends StatelessWidget {
   Widget _buildLaunchTextInputScreenWidget() {
     return HookBuilder(builder: (context) {
-      final controller = useProvider(textInputPageControllerProvider.notifier);
+      // final controller = useProvider(textInputPageControllerProvider.notifier);
       return TextButton(
           onPressed: () {
-            controller.onTapLaunchTextScreen();
+            // controller.onTapLaunchTextScreen();
           },
           child: const Text("テキスト入力画面の起動"));
     });
@@ -17,9 +17,9 @@ class TextInputPage extends StatelessWidget {
 
   Widget _buildTextWidget() {
     return HookBuilder(builder: (context) {
-      final monitoringText = useProvider(
-          textInputPageControllerProvider.select((value) => value.text));
-      return Text(monitoringText);
+      // final monitoringText = useProvider(
+      //     textInputPageControllerProvider.select((value) => value.text));
+      return Text("monitoringText");
     });
   }
 

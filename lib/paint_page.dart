@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_channel_practice/module/src/painter_ctrl.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'painter.dart';
+
+import 'module/painter.dart';
 
 class PaintPage extends StatefulHookWidget {
   const PaintPage({Key? key}) : super(key: key);
@@ -14,6 +16,7 @@ class _PaintPageState extends State<PaintPage> {
 
   // コントローラ
   final PaintController _controller = PaintController();
+  double penSize = 10.0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,7 @@ class _PaintPageState extends State<PaintPage> {
           FloatingActionButton(
             heroTag: "back",
             onPressed: () {
-              back(context);
+              // back(context);
 
             },
             child: const Text("back"),
@@ -52,7 +55,11 @@ class _PaintPageState extends State<PaintPage> {
           FloatingActionButton(
             heroTag: "size",
             onPressed: () {
-              _controller.changePenSize();
+
+              setState(() {
+                penSize += 10.0;
+                _controller.changePenSize(penSize);
+              });
             },
             child: const Text("size"),
           ),
@@ -90,7 +97,14 @@ class _PaintPageState extends State<PaintPage> {
           // クリアボタン
           FloatingActionButton(
             heroTag: "clear",
-            onPressed: () => _controller.clear(),
+            onPressed: (){
+
+              setState(() {
+                penSize = 10.0;
+                _controller.changePenSize(penSize);
+                _controller.clear();
+              });
+            },
             child: const Text("clear"),
           ),
         ],

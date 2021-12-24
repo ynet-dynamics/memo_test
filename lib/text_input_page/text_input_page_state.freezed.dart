@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'text_input_page_state.dart';
 
@@ -100,6 +101,7 @@ class __$TextInputPageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_TextInputPageState implements _TextInputPageState {
   const _$_TextInputPageState({required this.text});
 
@@ -114,14 +116,13 @@ class _$_TextInputPageState implements _TextInputPageState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TextInputPageState &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)));
+        (other.runtimeType == runtimeType &&
+            other is _TextInputPageState &&
+            (identical(other.text, text) || other.text == text));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(text);
+  int get hashCode => Object.hash(runtimeType, text);
 
   @JsonKey(ignore: true)
   @override
@@ -134,7 +135,7 @@ abstract class _TextInputPageState implements TextInputPageState {
       _$_TextInputPageState;
 
   @override
-  String get text => throw _privateConstructorUsedError;
+  String get text;
   @override
   @JsonKey(ignore: true)
   _$TextInputPageStateCopyWith<_TextInputPageState> get copyWith =>
