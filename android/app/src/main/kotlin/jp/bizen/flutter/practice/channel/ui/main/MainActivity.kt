@@ -10,6 +10,8 @@ class MainActivity : FlutterActivity() {
         super.configureFlutterEngine(flutterEngine)
         GeneratedPluginRegistrant.registerWith(flutterEngine)
         val messenger = flutterEngine.dartExecutor.binaryMessenger
+
+        //channelを設定する
         PlatformTextInput.setup(this, messenger)
     }
 }

@@ -35,6 +35,7 @@ class PlatformTextInput private constructor(private val channel: MethodChannel) 
     }
 
     fun sendText(text: String) {
+        //自身で起動する
         channel.invokeMethod(METHOD_SEND_TEXT, text)
     }
 }

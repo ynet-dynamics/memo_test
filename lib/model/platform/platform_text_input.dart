@@ -1,14 +1,17 @@
 import 'package:flutter/services.dart';
 
 class PlatformTextInput {
-  static const _channel = MethodChannel('channel/textInput');
+  static const _channel = MethodChannel('channel/text');
 
   static Future<void> launchTextScreen() async {
+    print(TextMethod.LaunchTextScreen.method);
     return _channel.invokeMethod(TextMethod.LaunchTextScreen.method);
   }
 
-  static void textHandler(void Function(String text) onSuccess,
-      {void Function(Error error)? onError}) {
+  static void textHandler(
+      void Function(String text) onSuccess,
+      {void Function(Error error)? onError}
+    ) {
     _channel.setMethodCallHandler((call) {
       if (call.method == TextMethod.SendText.method) {
         if (call.arguments is String) {
@@ -21,6 +24,7 @@ class PlatformTextInput {
       }
       return Future.value(null);
     });
+
   }
 }
 
