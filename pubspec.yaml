@@ -11,6 +11,7 @@ dependencies:
   hooks_riverpod: ^0.14.0
   freezed_annotation: ^0.14.0
   draw_your_image: ^0.2.0
+  scribble: ^0.1.2
 
 dev_dependencies:
   build_runner: ^1.12.2
