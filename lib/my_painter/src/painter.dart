@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_channel_practice/module/src/paint_history.dart';
-import 'package:flutter_channel_practice/module/src/painter_ctrl.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-
-
+part of my_painter;
 
 /*
  * ペイント

@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'paint_history.dart';
+part of my_painter;
 
 /*
  * ペイントコントローラ
  */
+
+
 class PaintController extends ChangeNotifier {
 
   // ペイント履歴

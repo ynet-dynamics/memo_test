@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_channel_practice/module/src/painter_ctrl.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-import 'module/painter.dart';
+import 'my_painter/index.dart';
+
 
 class PaintPage extends StatefulHookWidget {
   const PaintPage({Key? key}) : super(key: key);
