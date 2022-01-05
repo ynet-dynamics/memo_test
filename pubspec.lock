@@ -195,6 +195,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.14.0+2"
+  flutter_signature_view:
+    dependency: "direct main"
+    description:
+      name: flutter_signature_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   freezed:
     dependency: "direct dev"
     description:

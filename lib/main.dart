@@ -1,159 +1,104 @@
-import 'package:draw_your_image/draw_your_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_signature_view/flutter_signature_view.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Demo Signature View',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MyHomePage(title: 'Demo '),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-class _MyHomePageState extends State<MyHomePage> {
-  var _currentColor = Colors.black;
-  var _currentWidth = 4.0;
 
-  final _controller = DrawController();
+class _MyHomePageState extends State<MyHomePage> {
+  late SignatureView _signatureView;
+  var _value;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('draw_your_image example'),
-      ),
-
-      body: SizedBox(
-        height: double.infinity,
-        width: double.infinity,
-        child: Column(
-          children: [
-            //const SizedBox(height: 32),
-            //const Text('DRAW WHAT YOU WANT!'),
-            const SizedBox(height: 120),
-            Expanded(
-              child: Draw(
-                  controller: _controller,
-                  backgroundColor: Colors.white,
-                  strokeColor: _currentColor,
-                  strokeWidth: _currentWidth,
-                  isErasing: false,
-                  onConvertImage: (imageData) {
-
-                    // do something with imageData
-                  }
-              ),
-            ),
-            const SizedBox(height: 10),
-            Wrap(
-              spacing: 16,
-              children: [Colors.black, Colors.blue, Colors.red].map((color) {
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _currentColor = color;
-                      });
-                    },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        width: 40,
-                        height: 40,
-                        color: color,
-                        child: Center(
-                          child: _currentColor == color
-                              ? Icon(
-                            Icons.brush,
-                            color: Colors.white,
-                          )
-                              : SizedBox.shrink(),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ).toList(),
-            ),
-            const SizedBox(height: 5),
-            Slider(
-              max: 40,
-              min: 1,
-              value: _currentWidth,
-              onChanged: (value) {
-                setState(() {
-                  _currentWidth = value;
-                });
-              },
-            ),
-            const SizedBox(height: 60),
-          ],
-        ),
-      ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
-        FloatingActionButton(
-          heroTag: "undo",
-            onPressed: () {
-              _controller.undo();
-           },
-          child: const Text("undo"),
-        ),
-
-        const SizedBox(
-          height: 20.0,
-        ),
-          FloatingActionButton(
-            heroTag: "redo",
-            onPressed: () {
-              _controller.redo();
-            },
-            child: const Text("redo"),
-          ),
-
-          const SizedBox(
-            height: 20.0,
-          ),
-          FloatingActionButton(
-            heroTag: "clear",
-            onPressed: () {
-              _controller.clear();
-            },
-            child: const Text("clear"),
-          ),
-
-          const SizedBox(
-            height: 20.0,
-          ),
-          FloatingActionButton(
-            heroTag: "back",
-            onPressed: () {
-              _controller.convertToImage();
-            },
-            child: const Text("back"),
-          ),
-
-          const SizedBox(
-            height: 20.0,
-          ),
-
-        ])
+    _signatureView = SignatureView(
+      backgroundColor: Colors.yellow,
+      penStyle: Paint()
+        ..color = Colors.blue
+        ..strokeCap = StrokeCap.round
+        ..strokeWidth = 5.0,
+      onSigned: (data) {
+        print("On change: $data");
+      },
     );
 
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Signature view"),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.print),
+              onPressed: () {
+                try {
+                  _signatureView.isEmpty;
+                  // _signatureView.exportBytes().then((value) {
+                  //   setState(() {
+                  //     _value = value;
+                  //     print("Value: $value");
+                  //   });
+                  // });
+                  //
+                  // _signatureView.exportBase64Image().then((value) {
+                  //   print("Value: $value");
+                  // });
 
+                  String? value = _signatureView.exportListOffsetToString();
+                  print(value);
+                } catch (e) {
+                  print(e.toString());
+                }
+              })
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+            child: Column(
+              children: <Widget>[
+                Container(
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height * .8,
+                    child: Container(
+                      child: Center(
+                        child: _value != null ? Image.memory(_value) : Container(),
+                      ),
+                    )),
+                Container(
+                  width: 330,
+                  height: 330,
+                  child: _signatureView,
+                )
+              ],
+            )),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _clear,
+        tooltip: 'Clear',
+        child: Icon(Icons.clear),
+      ),
+    );
+  }
 
-}}
-
-
+  _clear() {
+    _signatureView.clear();
+  }
+}
